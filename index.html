@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeLogic Scripts | Premium Algorithmic Trading Software</title>
+    <meta name="description" content="Elevate your trading edge with our premium, high-performance automated scripts and indicators for TradingView, MetaTrader, and Python.">
+    <!-- Google Fonts: Manrope for UI logic, Space Mono for numeric & code details -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Live Ticker Tape Simulator -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">BTC/USD <span class="up">▲ 64,230.50 (+2.4%)</span></div>
+            <div class="ticker-item">ETH/USD <span class="up">▲ 3,420.10 (+1.8%)</span></div>
+            <div class="ticker-item">SOL/USD <span class="down">▼ 145.20 (-0.5%)</span></div>
+            <div class="ticker-item">EUR/USD <span class="up">▲ 1.0845 (+0.1%)</span></div>
+            <div class="ticker-item">NDX100 <span class="up">▲ 18,240.75 (+1.2%)</span></div>
+            <div class="ticker-item">XAU/USD <span class="down">▼ 2,340.10 (-0.3%)</span></div>
+            <div class="ticker-item">BTC/USD <span class="up">▲ 64,230.50 (+2.4%)</span></div>
+            <div class="ticker-item">ETH/USD <span class="up">▲ 3,420.10 (+1.8%)</span></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar updated-nav" style="padding: 12px 0;">
+        <div class="container nav-container updated-nav-container">
+            <div class="logo">
+                <span class="logo-text">Trade<span class="highlight">Logic</span></span> 
+            </div>
+            
+            <div class="nav-pill-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">❖ Home</a></li>
+                    <li><a href="#featured">Indicators</a></li>
+                    <li><a href="#featured">Auto-Bots</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#login" class="nav-login">Login / Register</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#wishlist" class="btn btn-outline-pill nav-icon-btn" aria-label="Wishlist" style="padding: 0; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </a>
+                <a href="#cart" class="btn btn-outline-pill">Cart (0)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero updated-hero">
+        <div class="hero-glow"></div>
+        <div class="hero-grid-bg">
+            <div class="grid-cross"></div>
+        </div>
+        
+        <div class="container hero-content text-center">
+            <div class="badge-pill">
+                Elite Algorithmic Edge <span class="highlight-star">✦</span> Buy Once, Use Forever
+            </div>
+            
+            <h1 class="hero-title">Automate Your Strategy<br>Dominate the Market</h1>
+            <p class="hero-subtitle">Premium custom scripts, indicators, and bots for retail traders.</p>
+            
+            <div class="hero-cta">
+                <a href="#featured" class="btn btn-white-pill btn-large">Browse Store <span class="btn-icon">&rarr;</span></a>
+                <a href="#how-it-works" class="btn btn-outline-pill btn-large outline-dark">View Features</a>
+            </div>
+        </div>
+        
+        <!-- Candlestick Decoration -->
+        <div class="candlestick-decoration">
+            <div class="candle c-faint h-sm offset-high"></div>
+            <div class="candle c-faint h-md offset-mid"></div>
+            <div class="candle c-bright h-lg offset-low"></div>
+            <div class="candle c-faint h-sm offset-mid"></div>
+            <div class="candle c-faint h-xs offset-high"></div>
+            <div class="candle c-bright h-md offset-mid"></div>
+            <div class="candle c-faint h-sm offset-low"></div>
+            <div class="candle c-bright h-lg offset-high"></div>
+            <div class="candle c-bright h-md offset-low"></div>
+            <div class="candle c-faint h-sm offset-high"></div>
+            <div class="candle c-faint h-xs offset-mid"></div>
+            <div class="candle c-faint h-xs offset-high"></div>
+            <div class="candle c-faint h-sm offset-mid"></div>
+            <div class="candle c-bright h-lg offset-mid"></div>
+            <div class="candle c-bright h-md offset-low"></div>
+            <div class="candle c-faint h-sm offset-high"></div>
+            <div class="candle c-faint h-sm offset-mid"></div>
+            <div class="candle c-faint h-xs offset-high"></div>
+            <div class="candle c-bright h-md offset-low"></div>
+            <div class="candle c-bright h-sm offset-mid"></div>
+            <div class="candle c-faint h-md offset-high"></div>
+            <div class="candle c-bright h-lg offset-low"></div>
+            <div class="candle c-faint h-md offset-mid"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Built For Your Ecosystem</h2>
+                <p class="section-subtitle">Seamless integration with the world's leading trading platforms.</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card pine-script">
+                    <div class="card-icon">⚡</div>
+                    <h3>PineScript (TradingView)</h3>
+                    <p>Custom indicators and automated strategies built natively for TradingView's lightweight charting engine.</p>
+                    <a href="#" class="card-link">View PineScripts &rarr;</a>
+                </div>
+                <div class="category-card metatrader">
+                    <div class="card-icon">📈</div>
+                    <h3>MetaTrader 4/5 (MQL)</h3>
+                    <p>High-frequency Expert Advisors (EAs) designed for forex and futures brokers.</p>
+                    <a href="#" class="card-link">View EAs &rarr;</a>
+                </div>
+                <div class="category-card python">
+                    <div class="card-icon">🐍</div>
+                    <h3>Python Crypto Bots</h3>
+                    <p>Direct API integration scripts for Binance, ByBit, and Coinbase using pandas and ccxt.</p>
+                    <a href="#" class="card-link">View Python Bots &rarr;</a>
+                </div>
+                <div class="category-card ninjatrader">
+                    <div class="card-icon">🥷</div>
+                    <h3>NinjaTrader (C#)</h3>
+                    <p>Order flow and volume profiling tools for professional futures traders.</p>
+                    <a href="#" class="card-link">View NT Scripts &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Selling Section -->
+    <section id="top-selling" class="top-selling-section section bg-darker" style="padding-top: 40px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="badge-pill" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; font-size: 0.8rem; margin-bottom: 20px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--primary-neon)"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon></svg> Best Selling
+            </div>
+            <h2 class="section-title" style="font-family: var(--font-code); font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 40px;">Top Selling Script</h2>
+            
+            <div class="h-prop-grid">
+                <!-- Card 1 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #ff3366, #ffcc00);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21L12 8l4 13"/><path d="M5 21l7-17 7 17"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Unfair Advantage Pack</h3>
+                        <span class="h-prop-price">€149.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">7 SCRIPT INCDUDED</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 2 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #00d4ff, #8a2be2);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21a1 1 0 01-1-1v-4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5z"/><path d="M5 11V5a1 1 0 011-1h12a1 1 0 011 1v14a1 1 0 01-1 1h-4"/><path d="M9 10h6"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Quantum Trend Sniper</h3>
+                        <span class="h-prop-price">€299.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">TREND ANALYTICS</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 3 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #00ff88, #00aaff);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Apex Liquidity Hunter</h3>
+                        <span class="h-prop-price">€499.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">LIQUIDITY SWEEP</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 4 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #ff7788, #8a2be2);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Crypto Arbitrage Node</h3>
+                        <span class="h-prop-price">€129.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">HFT SYSTEM</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 5 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #ffcc00, #ff9900);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Volume Profile Delta</h3>
+                        <span class="h-prop-price">€199.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">ORDER FLOW</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 6 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #20e3b2, #00d4ff);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Grid Master Pro</h3>
+                        <span class="h-prop-price">€249.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">DCA ENGINE</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 7 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #ff3366, #ff7788);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Gold Scalper EA</h3>
+                        <span class="h-prop-price">€89.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">XAUUSD ONLY</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 8 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #8a2be2, #db6aff);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">OrderBlock Finder</h3>
+                        <span class="h-prop-price">€349.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">SMART MONEY</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+                <!-- Card 9 -->
+                <div class="h-prop-card">
+                    <div class="h-prop-icon" style="background: linear-gradient(135deg, #00ff88, #ffcc00);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </div>
+                    <div class="h-prop-content">
+                        <h3 class="h-prop-title">Mempool Sniper</h3>
+                        <span class="h-prop-price">€599.00</span>
+                        <div class="h-prop-badges">
+                            <span class="prop-badge green">ON-CHAIN SCAN</span>
+                        </div>
+                    </div>
+                    <button class="h-prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Combined Redesigned Sections Wrap -->
+    <div class="crypto-toolkit-wrap section" style="position: relative; padding: 100px 0;">
+        <div class="perspective-grid-bg">
+            <div class="perspective-grid-inner"></div>
+        </div>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="timeline-section" style="position: relative; z-index: 2; margin-bottom: 120px;">
+            <div class="container timeline-container">
+                <div class="timeline-left">
+                    <div class="badge-pill" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; font-size: 0.8rem; margin-bottom: 20px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--primary-neon)"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon></svg> How it Works
+                    </div>
+                    <h2 class="section-title">How TradeLogic Works<br>to Get You Started</h2>
+                </div>
+                
+                <div class="timeline-right">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">01</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+                            <h3>Purchase Your License</h3>
+                            <p>Secure your script access through our encrypted dashboard. Enjoy a smooth onboarding process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">02</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg></div>
+                            <h3>Download or Connect</h3>
+                            <p>Easily download indicator files or connect your MT4/MT5 API directly. Multi-platform supported.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">03</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
+                            <h3>Set Your Parameters</h3>
+                            <p>Tweak risk configurations or use our pre-optimized institutional presets. So you can trade your way.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">04</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                            <h3>Automate & Monitor</h3>
+                            <p>Let the code execute precisely. Monitor performance in real-time with full control at your fingertips.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="toolkit-section" style="position: relative; z-index: 2;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="badge-pill mx-auto" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; font-size: 0.8rem; margin-bottom: 20px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--primary-neon)"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon></svg> Why Choose Us
+                    </div>
+                    <h2 class="section-title">Your Complete Trading Toolkit</h2>
+                    <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">TradeLogic offers powerful features to help you test, execute, and manage your algorithmic portfolio confidently.</p>
+                </div>
+                
+                <div class="toolkit-grid">
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>Backtested Reliability</h3>
+                        <p>Ensure robustness with included max drawdown & sharpe ratio reports.</p>
+                    </div>
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10" stroke="currentColor" stroke-width="2"/><line x1="18" y1="20" x2="18" y2="4" stroke="currentColor" stroke-width="2"/><line x1="6" y1="20" x2="6" y2="16" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>Zero-Lag Execution</h3>
+                        <p>Strictly no-repainting algorithms for precision live execution.</p>
+                    </div>
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>Dynamic Risk</h3>
+                        <p>Automated position sizing and trailing stops built directly in.</p>
+                    </div>
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>Cross-Platform</h3>
+                        <p>Deploy seamlessly across TradingView, MetaTrader, and Python.</p>
+                    </div>
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>24/7 Automation</h3>
+                        <p>Access reliable, around-the-clock market monitoring while you sleep.</p>
+                    </div>
+                    <div class="toolkit-card">
+                        <div class="toolkit-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 12A10 10 0 0 0 12 2v10z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+                        <h3>Lifetime Updates</h3>
+                        <p>Get free ongoing strategy adjustments whenever the market shifts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Featured Scripts Store -->
+    <section id="featured" class="store section">
+        <div class="container">
+            <!-- Exact Original Header with Arrows -->
+            <div class="section-header flex-between mb-4" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+                <div>
+                    <div class="badge-pill" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; margin-bottom: 20px; color: #888;">
+                        <span style="color: var(--primary-neon);">★</span> Elite Algorithmic Edge
+                    </div>
+                    <h2 class="section-title" style="font-family: 'JetBrains Mono', monospace; font-size: 2.8rem; color: #fff; letter-spacing: -1px; margin-bottom: 5px;">Trending Scripts</h2>
+                    <p class="section-subtitle" style="margin-bottom: 0; color: #888;">Our most profitable algorithms this month.</p>
+                </div>
+                <div class="nav-arrows" style="display:flex; gap:10px;">
+                    <button id="trendPrevBtn" style="width:40px; height:40px; border-radius:50%; background:#111; border:1px solid rgba(255,255,255,0.1); color:white; display:flex; align-items:center; justify-content:center; cursor:pointer; transition: all 0.3s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                    <button id="trendNextBtn" style="width:40px; height:40px; border-radius:50%; background:#111; border:1px solid rgba(255,255,255,0.1); color:white; display:flex; align-items:center; justify-content:center; cursor:pointer; transition: all 0.3s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                </div>
+            </div>
+            
+            <div class="trending-slider-container">
+                <div class="trending-slider-track" id="trendingSlider">
+
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$149.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Unfair Advantage Pack</h3>
+                        <p class="prop-desc">Advanced multi-timeframe trend confirmatio using dynamic volatility bands.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">7 SCRIPT INCDUDED</span>
+                            <span class="prop-badge cyan">TRADINGVIEW</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$129.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Momentum Reversal</h3>
+                        <p class="prop-desc">Catch institutional reversals with a high win rate on lower timeframes.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">WIN: 78%</span>
+                            <span class="prop-badge cyan">TRADINGVIEW</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$299.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Grid Master EA</h3>
+                        <p class="prop-desc">Fully automated grid and DCA algorithm optimized for ranging crypto markets.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">ROI: +18%/mo</span>
+                            <span class="prop-badge cyan">PYTHON BOT</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$199.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Gold Scalper Pro</h3>
+                        <p class="prop-desc">Specifically tuned for XAUUSD with strict risk management parameters and trailing stops.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">WIN: 88%</span>
+                            <span class="prop-badge cyan">METATRADER 4</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$89.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">OrderBlock Finder</h3>
+                        <p class="prop-desc">Automatically plots unmitigated supply and demand zones for precision entries.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">RR: 1:3 Min</span>
+                            <span class="prop-badge cyan">TRADINGVIEW</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$349.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Volume Profile Delta</h3>
+                        <p class="prop-desc">Advanced DOM and footprint charting add-on for serious futures day traders.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">WIN: 65%</span>
+                            <span class="prop-badge cyan">NINJATRADER</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$599.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Mempool Sniper</h3>
+                        <p class="prop-desc">High-speed on-chain listener for front-running decentralized dex launches.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">ROI: +42%/mo</span>
+                            <span class="prop-badge cyan">PYTHON BOT</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-card-top">
+                        <div class="prop-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg></div>
+                        <div class="prop-price">$159.00</div>
+                    </div>
+                    <div class="prop-card-middle">
+                        <h3 class="prop-title">Liquidity Hunter</h3>
+                        <p class="prop-desc">Highlights hidden resting liquidity pools to catch smart money grabs.</p>
+                        <div class="prop-badges">
+                            <span class="prop-badge green">WIN: 72%</span>
+                            <span class="prop-badge cyan">TRADINGVIEW</span>
+                        </div>
+                    </div>
+                    <div class="prop-card-bottom">
+                        <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Generated Feature Scripts Component -->
+<section id="feature-scripts" class="store section bg-darker">
+    <div class="container">
+        <!-- Header & Category Buttons -->
+        <div class="featured-header-wrapper" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px;">
+            <div class="featured-header-left">
+                <div class="badge-pill" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 16px; border-radius: 40px; font-size: 0.85rem; color: #888; font-weight: 500; margin-bottom: 25px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-neon)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="fill: var(--primary-neon);"><rect x="9" y="9" width="6" height="6" transform="rotate(45 12 12)"/></svg> 
+                    Featured Products
+                </div>
+                <h2 style="font-family: 'JetBrains Mono', monospace; font-size: 3.2rem; color: #fff; line-height: 1.1; letter-spacing: -1px; margin: 0;">Popular tools<br>traders start with.</h2>
+            </div>
+            <div class="featured-categories" style="display: flex; gap: 15px;">
+                <button class="btn-category active-category" onclick="switchCategory('tradingview', this)" style="background: var(--primary-neon); color: #000; border-color: var(--primary-neon); border-radius: 40px; padding: 10px 24px; font-weight: 600; cursor: pointer; border: 1px solid transparent; font-size: 0.95rem;">TradingView</button>
+                <button class="btn-category" onclick="switchCategory('metatrader', this)" style="background: transparent; color: #e0e0e0; border-color: rgba(255,255,255,0.1); border-radius: 40px; padding: 10px 24px; font-weight: 600; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); font-size: 0.95rem;">MetaTrader 4</button>
+                <button class="btn-category" onclick="switchCategory('pythonbots', this)" style="background: transparent; color: #e0e0e0; border-color: rgba(255,255,255,0.1); border-radius: 40px; padding: 10px 24px; font-weight: 600; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); font-size: 0.95rem;">Python Bots</button>
+            </div>
+        </div>
+
+        <div id="feature-grid-container">
+            <!-- Rendered via JS -->
+        </div>
+
+        <div class="text-center" style="margin-top: 60px;">
+            <a href="#featured" class="btn btn-outline-pill btn-large outline-dark" style="border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 15px 30px; border-radius: 40px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: 600; background: rgba(255,255,255,0.02); transition: background 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='rgba(255,255,255,0.02)'">Browse All Feature Scripts <span class="btn-icon">&rarr;</span></a>
+        </div>
+    </div>
+    
+    <script>
+        const iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M5 22V12a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10"/><path d="M9 13v9"/></svg>';
+        
+        const catProducts = {
+            'tradingview': [
+                { t: "Smart Money Concepts", p: "$149.00", d: "Automated SMC indicator defining supply, demand, and fair value gaps.", b1: "WIN: 75%", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Trend Confirmation Pro", p: "$99.00", d: "Filter out market noise with dynamic volatility bands.", b1: "TREND FILTER", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "OrderBlock Matrix", p: "$129.00", d: "Maps hidden institutional order blocks across multiple timeframes.", b1: "RR: 1:4", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Liquidity Sweep Toolkit", p: "$199.00", d: "Alerts you perfectly when retail liquidity is taken efficiently.", b1: "SNIPER ENTRIES", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Fibonacci Auto-Trader", p: "$89.00", d: "Automatically plots the optimal fib retracement levels live.", b1: "WIN: 68%", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Volume Delta Profiler", p: "$249.00", d: "Uncover hidden buying and selling pressure with deep volume analytics.", b1: "ADVANCED", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Reversal Divergence", p: "$159.00", d: "Spot hidden RSI and MACD divergences automatically.", b1: "WIN: 82%", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" },
+                { t: "Breakout Mastery EA", p: "$179.00", d: "Capture explosive moves out of tight consolidation zones seamlessly.", b1: "HIGH RR", b1c: "green", b2: "TRADINGVIEW", b2c: "cyan" }
+            ],
+            'metatrader': [
+                { t: "Gold Scalper EA", p: "$299.00", d: "Optimized for XAUUSD on the M5 timeframe with trailing stops.", b1: "WIN: 88%", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "Grid Recovery Bot", p: "$349.00", d: "Safe grid strategy designed to recover drawdown efficiently.", b1: "DRAWDOWN < 5%", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "News Hedging EA", p: "$199.00", d: "Automatically places straddle orders 10 seconds before high impact news.", b1: "NEWS TRADER", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "London Breakout Pro", p: "$149.00", d: "Traded specifically during the London open session for maximum volatility.", b1: "SESSION BOT", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "Prop Firm Passer", p: "$499.00", d: "Low risk MT4 expert advisor designed to pass challenge phases.", b1: "PROP FIRM", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "Night Scalper EA", p: "$249.00", d: "Exploits low volatility Asian session ranges with precise boundaries.", b1: "ASIAN SESSION", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "EURUSD Pips Hunter", p: "$129.00", d: "Strictly confined to EURUSD trends using moving average crossovers.", b1: "WIN: 71%", b1c: "green", b2: "METATRADER 4", b2c: "cyan" },
+                { t: "Trailing Stop Manager", p: "$69.00", d: "Utility EA that trails your manual positions automatically.", b1: "UTILITY", b1c: "green", b2: "METATRADER 4", b2c: "cyan" }
+            ],
+            'pythonbots': [
+                { t: "Mempool Sniper", p: "$599.00", d: "High-speed token sniper for ETH and BSC networks.", b1: "ON-CHAIN", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Arbitrage Triangle", p: "$799.00", d: "Finds micro discrepancies between 3 trading pairs on centralized exchanges.", b1: "ARBITRAGE", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "DCA Grid Node", p: "$299.00", d: "Fully detached Python server for scaling in and out of crypto spot positions.", b1: "SPOT TRADING", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Funding Rate Harvester", p: "$399.00", d: "Automatically long/short perpetuals to harvest delta-neutral yields.", b1: "DELTA NEUTRAL", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Sentiment Analysis Bot", p: "$449.00", d: "Scrapes Twitter and Reddit to front-run hype driven coin pumps.", b1: "AI DRIVEN", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Stat-Arb Co-integration", p: "$899.00", d: "Trades the spread between two highly correlated crypto assets crossing.", b1: "QUANTITATIVE", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Market Maker Liquidity", p: "$1000.00+", d: "Provide continuous liquidity around the spread to capture fees.", b1: "INSTITUTIONAL", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" },
+                { t: "Flash Loan Executor", p: "$649.00", d: "Identify and execute uncollateralized arbitrage in a single block.", b1: "DEFI", b1c: "green", b2: "PYTHON BOT", b2c: "cyan" }
+            ]
+        };
+
+        function renderCategory(cat) {
+            const products = catProducts[cat];
+            let html = '<div class="grid-4-cols category-grid" style="gap: 24px; row-gap: 30px;">';
+            products.forEach(p => {
+                html += '<div class="prop-card">';
+                html += '  <div class="prop-card-top">';
+                html += '    <div class="prop-icon">' + iconSvg + '</div>';
+                html += '    <div class="prop-price">' + p.p + '</div>';
+                html += '  </div>';
+                html += '  <div class="prop-card-middle">';
+                html += '    <h3 class="prop-title">' + p.t + '</h3>';
+                html += '    <p class="prop-desc">' + p.d + '</p>';
+                html += '    <div class="prop-badges">';
+                html += '        <span class="prop-badge ' + p.b1c + '" style="padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">' + p.b1 + '</span>';
+                html += '        <span class="prop-badge ' + p.b2c + '" style="padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">' + p.b2 + '</span>';
+                html += '    </div>';
+                html += '  </div>';
+                html += '  <div class="prop-card-bottom">';
+                html += '    <button class="prop-heart-btn" aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>';
+                html += '    <button class="prop-cart-btn" aria-label="Add to cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add to cart</button>';
+                html += '  </div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            document.getElementById('feature-grid-container').innerHTML = html;
+        }
+
+        function switchCategory(cat, btn) {
+            const buttons = btn.parentElement.querySelectorAll('.btn-category');
+            buttons.forEach(b => {
+                b.style.background = 'transparent';
+                b.style.color = '#e0e0e0';
+                b.style.borderColor = 'rgba(255,255,255,0.2)';
+            });
+            btn.style.background = 'var(--primary-neon)';
+            btn.style.color = '#000';
+            btn.style.borderColor = 'var(--primary-neon)';
+            renderCategory(cat);
+        }
+
+        // Initialize first section
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCategory('tradingview');
+        });
+    </script>
+</section>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="badge feature-badge" style="border-color: rgba(0, 255, 136, 0.3); color: var(--primary-neon); background: rgba(0, 255, 136, 0.05); text-transform: none; display: inline-flex; justify-content: center; align-items: center; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-neon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    FAQ
+                </span>
+                <h2 class="section-title" style="font-size: 2.8rem; margin-top: 15px;">Common questions before you buy.</h2>
+                <p class="section-subtitle">The essentials buyers usually want answered first.</p>
+            </div>
+            
+            <div class="faq-accordion" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does this work with TradingView?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all indicator variants are perfectly native to Pine Script! After checkout, just enter your TradingView username and invite-only access will be instantly granted strictly to your account.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What do I receive after purchase?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You'll receive instant lifetime access to the invite-only indicators (or EA files), comprehensive PDF & Video installation guides, pre-optimized settings templates, and an exclusive invite to our private algorithmic Discord community.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do invite-only tools work?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once you purchase and provide your handle, the locked script will permanently appear under the 'Invite-only scripts' tab directly inside your TradingView indicator menu. No messy downloading or coding required!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is setup difficult?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all. Absolute beginners are live in under 5 minutes. You simply click to add the indicator to your chart, and our pre-configured institutional parameters immediately take over.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Where do I get help if I need it?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Support is available 24/7! You can open a ticket seamlessly in our private Discord server, or email our support staff directly from your dashboard. We usually guarantee resolution within hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog-section text-center" style="padding-top: 80px; padding-bottom: 20px;">
+        <div class="container relative z-10">
+            <span class="badge feature-badge" style="border-color: rgba(0, 255, 136, 0.3); color: var(--primary-neon); background: rgba(0, 255, 136, 0.05); text-transform: none;">Blog</span>
+            <h2 class="mb-5" style="font-size: 2.8rem; margin-top: 15px;">Algorithmic News, Trends, and Tips</h2>
+            
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; text-align: left;">
+                <!-- Card 1 -->
+                <div class="blog-card-new">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta-new">
+                            <span class="blog-date">Mar 10, 2026</span>
+                            <span class="blog-tag" style="background: rgba(0, 255, 136, 0.1); color: var(--primary-neon); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; border: 1px solid rgba(0,255,136,0.3); text-transform: uppercase;">Security</span>
+                        </div>
+                        <h3>VPS Security: How to Keep Your Trading Funds Safe</h3>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="blog-card-new">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta-new">
+                            <span class="blog-date">Feb 20, 2026</span>
+                            <span class="blog-tag" style="background: rgba(0, 255, 136, 0.1); color: var(--primary-neon); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; border: 1px solid rgba(0,255,136,0.3); text-transform: uppercase;">Trends</span>
+                        </div>
+                        <h3>How to Quickly Understand Quantitative EA Basics</h3>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="blog-card-new highlight-card" style="border-color: var(--primary-neon); box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta-new">
+                            <span class="blog-date">Jan 01, 2026</span>
+                            <span class="blog-tag" style="background: rgba(0, 255, 136, 0.1); color: var(--primary-neon); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; border: 1px solid rgba(0,255,136,0.3); text-transform: uppercase;">Trends</span>
+                        </div>
+                        <h3>Exploring the Great Future of Automated Prop Trading</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px;">
+                <a href="#" class="btn btn-outline" style="border: 1px solid var(--primary-neon); color: var(--primary-neon); border-radius: 50px; padding: 12px 35px; background: transparent; font-weight: 600; text-decoration: none; transition: all 0.3s;">See More News</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Super CTA Section -->
+    <section class="section super-cta-section text-center">
+        <div class="cta-glow-mound"></div>
+        <div class="container relative z-10" style="padding-top: 160px; padding-bottom: 160px;">
+            <h2 style="font-size: 3.5rem; margin-bottom: 25px; font-weight: 600; line-height: 1.25; letter-spacing: -0.02em;">Start Your Crypto Journey<br>with TradeLogic Today!</h2>
+            <p style="color: #b0b0b0; font-size: 1.15rem; margin-bottom: 45px; max-width: 600px; margin-left: auto; margin-right: auto; font-weight: 400;">Join TradeLogic and simplify your cryptocurrency journey!</p>
+            <a href="#" class="btn btn-cta-white" style="display: inline-flex; align-items: center; background: #fff; padding: 6px 6px 6px 28px; border-radius: 40px; text-decoration: none;">
+                <span style="color: #111; font-weight: 600; margin-right: 15px; font-size: 1.05rem;">Browse Scripts</span>
+                <div class="btn-cta-circle" style="width: 44px; height: 44px; background: #00ea76; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="black" stroke-width="2.5" fill="none" class="feather"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-new-grid">
+                <!-- Branding & Newsletter -->
+                <div class="footer-brand-col">
+                    <div class="logo" style="margin-bottom: 25px; display: flex; align-items: center;">
+                        <div class="logo-icon-solid" style="width: 44px; height: 44px; background: var(--primary-neon); color: #000; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; margin-right: 12px; font-family: var(--font-ui);">T</div>
+                        <span class="logo-text" style="font-size: 1.8rem;">Trade<span style="color: var(--primary-neon);">Logic</span></span>
+                    </div>
+                    <h4 style="margin-bottom: 12px; font-size: 1.15rem; color: #fff; font-weight: 600;">Subscribe for Updates</h4>
+                    <p style="color: #8b8b9b; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Stay updated with the latest news in quantitative algorithms.</p>
+                    <form class="footer-subscribe-form" onsubmit="event.preventDefault()">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-send">Send</button>
+                    </form>
+                </div>
+                
+                <!-- Links -->
+                <div class="footer-links-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Company Details</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Values</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter/X</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2026 TradeLogic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+    <!-- Scroll Fade Transitions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new ManropesectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isManropesecting) {
+                        if (entry.target.classList.contains('timeline-line')) {
+                            entry.target.classList.add('drawn');
+                        } else {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.timeline-item, .toolkit-card, .timeline-line').forEach((el, i) => {
+                if (el.classList.contains('timeline-line')) {
+                    observer.observe(el);
+                } else {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ' + (i * 0.1) + 's';
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+
+    <!-- Trending Slider Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('trendingSlider');
+            const btnPrev = document.getElementById('trendPrevBtn');
+            const btnNext = document.getElementById('trendNextBtn');
+            
+            if(!track || !btnPrev || !btnNext) return;
+
+            let currentIndex = 0;
+            const updateSlider = () => {
+                const cardWidth = track.children[0].offsetWidth;
+                const gap = 24; // from gap: 24px in css
+                const moveAmount = cardWidth + gap;
+                track.style.transform = `translateX(-${currentIndex * moveAmount}px)`;
+            };
+
+            const maxVisible = window.innerWidth > 1100 ? 4 : (window.innerWidth > 800 ? 3 : (window.innerWidth > 500 ? 2 : 1));
+            const totalCards = track.children.length;
+
+            btnNext.addEventListener('click', () => {
+                if (currentIndex < totalCards - maxVisible) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+
+            btnPrev.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+
+            window.addEventListener('resize', updateSlider);
+        });
+    </script>
+</body>
+</html>
