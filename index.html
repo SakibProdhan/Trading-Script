@@ -856,12 +856,10 @@
     <!-- Scroll Fade Transitions -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new ManropesectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isManropesecting) {
-                        if (entry.target.classList.contains('timeline-line')) {
-                            entry.target.classList.add('drawn');
-                        } else {
+                    if (entry.isIntersecting) {
+                        if (!entry.target.classList.contains('timeline-line')) {
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateY(0)';
                         }
@@ -869,16 +867,40 @@
                 });
             }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-            document.querySelectorAll('.timeline-item, .toolkit-card, .timeline-line').forEach((el, i) => {
-                if (el.classList.contains('timeline-line')) {
-                    observer.observe(el);
-                } else {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(20px)';
-                    el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ' + (i * 0.1) + 's';
-                    observer.observe(el);
-                }
+            document.querySelectorAll('.timeline-item, .toolkit-card').forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ' + (i * 0.1) + 's';
+                observer.observe(el);
             });
+
+            // Timeline line progressive fill animation on scroll
+            const timelineLine = document.querySelector('.timeline-line');
+            const timelineRight = document.querySelector('.timeline-right');
+            
+            if (timelineLine && timelineRight) {
+                // Initialize right away
+                updateTimelineFill();
+                
+                window.addEventListener('scroll', updateTimelineFill, { passive: true });
+                
+                function updateTimelineFill() {
+                    const rect = timelineRight.getBoundingClientRect();
+                    const windowMid = window.innerHeight / 2;
+                    let fillPercentage = 0;
+                    
+                    if (rect.top > windowMid) {
+                        fillPercentage = 0;
+                    } else if (rect.bottom < windowMid) {
+                        fillPercentage = 100;
+                    } else {
+                        fillPercentage = ((windowMid - rect.top) / rect.height) * 100;
+                    }
+                    
+                    fillPercentage = Math.max(0, Math.min(100, fillPercentage));
+                    timelineLine.style.setProperty('--line-fill', `${fillPercentage}%`);
+                }
+            }
         });
     </script>
 

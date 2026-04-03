@@ -991,6 +991,13 @@ img {
     transform: scale(1);
 }
 
+.h-prop-cart-btn:hover {
+    background: var(--primary-neon);
+    color: #000;
+    border-color: var(--primary-neon);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
 .h-prop-cart-btn svg {
     width: 20px;
     height: 20px;
@@ -1125,7 +1132,7 @@ html {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--primary-neon) 0%, var(--primary-neon) 130px, rgba(255,255,255,0.25) 130px, rgba(255,255,255,0.25) 100%);
+    background: linear-gradient(to bottom, var(--primary-neon) 0%, var(--primary-neon) var(--line-fill, 0%), rgba(255,255,255,0.25) var(--line-fill, 0%), rgba(255,255,255,0.25) 100%);
     
     /* SCROLL ANIMATION SUPPORT */
     
